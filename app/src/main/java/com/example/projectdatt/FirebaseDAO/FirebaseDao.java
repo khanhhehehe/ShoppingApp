@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.projectdatt.Fragment.Profile.ProfileFragment;
 import com.example.projectdatt.Interface.StatusGetProducts;
 import com.example.projectdatt.Interface.StatusGetUsers;
 import com.example.projectdatt.LoginActivity;
@@ -60,9 +61,7 @@ public class FirebaseDao {
     public static void UpdateListUsers() {
         ReadUsers(new StatusGetUsers() {
             @Override
-            public void onSuccess(List<Users> listUsers) {
-                FirebaseDao.myListUsers = listUsers;
-            }
+            public void onSuccess(List<Users> listUsers) {FirebaseDao.myListUsers = listUsers;}
 
             @Override
             public void onError(DatabaseError error) {
@@ -71,7 +70,7 @@ public class FirebaseDao {
         });
     }//to update myListUsers
 
-    public static void UpdateProfileUser(String id, String name, String phone,Context context) {
+    public static void UpdateProfileUser(String id, String name, String phone, Context context) {
         HashMap hashMap = new HashMap();
         hashMap.put("name", name);
         hashMap.put("phone", phone);
@@ -89,7 +88,8 @@ public class FirebaseDao {
             }
         });
     }
-    public static void UpdatePasswordUser(String id, String password,Context context) {
+
+    public static void UpdatePasswordUser(String id, String password, Context context) {
         HashMap hashMap = new HashMap();
         hashMap.put("pass", password);
         DatabaseReference userRef = db.getReference().child("Users");
@@ -163,8 +163,9 @@ public class FirebaseDao {
             }
         });
     }
-    public static void UpdateInfoProduct(String id, String product_name, int price, String description,Context context) {
-        Products product = new Products(product_name,price,description);
+
+    public static void UpdateInfoProduct(String id, String product_name, int price, String description, Context context) {
+        Products product = new Products(product_name, price, description);
         DatabaseReference productRef = db.getReference().child("Products");
         productRef.child(id).setValue(product).addOnSuccessListener(new OnSuccessListener() {
             @Override

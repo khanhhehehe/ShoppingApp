@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.example.projectdatt.FirebaseDAO.FirebaseDao;
 import com.example.projectdatt.Interface.StatusGetUsers;
 import com.example.projectdatt.Model.Users;
+import com.example.projectdatt.SharedPreferences.SaveUserLogin;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseError;
@@ -55,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (dialog2 != null) {
                         dialog2.dismiss();
                     }
+                    SaveUserLogin.saveAccount(getBaseContext(),u);
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     finish();
                     return;

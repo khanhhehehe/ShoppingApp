@@ -55,6 +55,7 @@
                 android:drawableStart="@drawable/custom_email"
                 android:drawablePadding="12dp"
                 android:ems="10"
+                android:maxLength="10"
                 android:hint="Số điện thoại"
                 android:inputType="number"
                 android:paddingHorizontal="12dp"
