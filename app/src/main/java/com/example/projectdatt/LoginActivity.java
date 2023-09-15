@@ -49,8 +49,12 @@ public class LoginActivity extends AppCompatActivity {
         for (Users u : FirebaseDao.myListUsers) {
             if (u.getName().equals(username)) {
                 if (u.getPass().equals(password)) {
-                    dialog1.dismiss();
-                    dialog2.dismiss();
+                    if (dialog1 != null) {
+                        dialog1.dismiss();
+                    }
+                    if (dialog2 != null) {
+                        dialog2.dismiss();
+                    }
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     finish();
                     return;

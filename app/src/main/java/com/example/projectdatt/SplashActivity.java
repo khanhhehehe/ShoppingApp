@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -14,6 +15,8 @@ import com.example.projectdatt.Model.Users;
 import com.google.firebase.database.DatabaseError;
 
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -21,17 +24,15 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        FirebaseDao.ReadUsers(new StatusGetUsers() {
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        executorService.execute(new Runnable() {
             @Override
-            public void onSuccess(List<Users> listUsers) {
-                FirebaseDao.myListUsers = listUsers;
-            }
-
-            @Override
-            public void onError(DatabaseError error) {
-                Log.d("ERROR", "onError: ");
+            public void run() {
+                FirebaseDao.UpdateListUsers();
+                FirebaseDao.UpdateListProducts();
             }
         });
+
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
