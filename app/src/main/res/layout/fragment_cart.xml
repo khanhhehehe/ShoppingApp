@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.Cart.CartFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    tools:context=".Fragment.Cart.CartFragment"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/btn_pay"
+        android:text="Thanh toán"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:textColor="@color/white"
+        android:elevation="3dp"
+        android:textSize="16dp"/>
     <TextView
+        android:id="@+id/tv_total"
+        android:textSize="25dp"
+        android:text="1000"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_listproductsadd"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Cart" />
+        android:paddingHorizontal="10dp">
 
-</FrameLayout>
+    </androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>

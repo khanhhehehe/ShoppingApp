@@ -30,6 +30,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.auth.User;
 
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class LoginActivity extends AppCompatActivity {
     private CheckBox myCheckbox;
@@ -50,13 +52,21 @@ public class LoginActivity extends AppCompatActivity {
         for (Users u : FirebaseDao.myListUsers) {
             if (u.getName().equals(username)) {
                 if (u.getPass().equals(password)) {
+                    ExecutorService executorService = Executors.newCachedThreadPool();
+                    executorService.execute(new Runnable() {
+                        @Override
+                        public void run() {
+                            FirebaseDao.UpdateListProductsAddCart(getBaseContext());
+                            FirebaseDao.UpdateListBill(getBaseContext());
+                        }
+                    });
                     if (dialog1 != null) {
                         dialog1.dismiss();
                     }
                     if (dialog2 != null) {
                         dialog2.dismiss();
                     }
-                    SaveUserLogin.saveAccount(getBaseContext(),u);
+                    SaveUserLogin.saveAccount(getBaseContext(), u);
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     finish();
                     return;

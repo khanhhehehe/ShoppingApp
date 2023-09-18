@@ -32,7 +32,6 @@ public class SplashActivity extends AppCompatActivity {
                 FirebaseDao.UpdateListProducts();
             }
         });
-
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override

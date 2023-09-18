@@ -10,7 +10,9 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.util.Log;
 import android.view.Gravity;
@@ -26,6 +28,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.projectdatt.FirebaseDAO.FirebaseDao;
+import com.example.projectdatt.Fragment.Profile.History.HistoryFragment;
 import com.example.projectdatt.LoginActivity;
 import com.example.projectdatt.MainActivity;
 import com.example.projectdatt.Model.Users;
@@ -41,7 +44,7 @@ import com.google.firebase.firestore.auth.User;
  */
 public class ProfileFragment extends Fragment {
     TextView tv_update, tv_name_profile, tv_phone, tv_username;
-    LinearLayout linear_logout, linear_changepass;
+    LinearLayout linear_logout, linear_changepass,linear_history;
     Users user;
 
     public ProfileFragment() {
@@ -80,6 +83,10 @@ public class ProfileFragment extends Fragment {
         linear_changepass.setOnClickListener(view1 -> {
             ShowDialogUpdatePassword();
         });
+        linear_history.setOnClickListener(view1 -> {
+            FragmentManager fragmentManager = ((AppCompatActivity) view.getContext()).getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.layout_content, HistoryFragment.newInstance()).addToBackStack(null).commit();
+        });
         linear_logout.setOnClickListener(view1 -> {
             ShowDialogLogout();
         });
@@ -92,6 +99,7 @@ public class ProfileFragment extends Fragment {
         tv_phone = view.findViewById(R.id.tv_phone);
         linear_logout = view.findViewById(R.id.linear_logout);
         linear_changepass = view.findViewById(R.id.linear_changepass);
+        linear_history = view.findViewById(R.id.linear_history);
     }
 
     private void ShowDialogUpdateProfile() {

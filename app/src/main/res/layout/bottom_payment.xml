@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_bottom"
+    android:paddingVertical="28dp"
+    android:layout_marginTop="40dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:paddingHorizontal="40dp">
+                <ImageView
+                    android:id="@+id/img_dismiss"
+                    android:src="@drawable/clear2"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginBottom="30dp"
+                android:text="Thanh toán ngay"
+                android:textSize="28dp"
+                android:gravity="center"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="8dp"
+                android:background="@drawable/custom_input"
+                android:drawableStart="@drawable/custom_account"
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:hint="Tên người dùng"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="15dp"
+                android:textColorHint="#ccc"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/edt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="8dp"
+                android:background="@drawable/custom_input"
+                android:drawableStart="@drawable/baseline_phone_24_icon"
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:hint="Số điện thoại"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="15dp"
+                android:textColorHint="#ccc"
+                android:textSize="20dp" />
+            <EditText
+                android:id="@+id/edt_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="8dp"
+                android:background="@drawable/custom_input"
+                android:drawableStart="@drawable/baseline_location_on_24"
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:hint="Địa chỉ"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="15dp"
+                android:textColorHint="#ccc"
+                android:textSize="20dp" />
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="40dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Thanh toán khi nhận hàng"
+                    android:textSize="20dp"
+                    android:ems="10"
+                    android:layout_marginVertical="8dp"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="15dp"
+                    android:checked="true"
+                    android:background="@drawable/custom_input"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Thanh toán ngân hàng"
+                    android:textSize="20dp"
+                    android:ems="10"
+                    android:layout_marginVertical="8dp"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="15dp"
+                    android:background="@drawable/custom_input"/>
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btn_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/set_background_button"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="17dp"
+                android:text="Xác nhận"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>

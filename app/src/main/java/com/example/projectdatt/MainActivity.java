@@ -11,6 +11,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.MenuItem;
 
+import com.example.projectdatt.Adapter.Cart.CartAdapter;
 import com.example.projectdatt.FirebaseDAO.FirebaseDao;
 import com.example.projectdatt.Fragment.Cart.CartFragment;
 import com.example.projectdatt.Fragment.Home.HomeFragment;
@@ -34,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.bottom_home:
                         replaceFragment(HomeFragment.newInstance());
-
                         return true;
                     case R.id.bottom_cart:
                         replaceFragment(CartFragment.newInstance());
