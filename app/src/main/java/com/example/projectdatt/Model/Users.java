@@ -6,6 +6,7 @@ public class Users {
     private String pass;
     private String phone;
     private boolean role;
+    private boolean isBan;
 
     public String getName() {
         return name;
@@ -22,11 +23,12 @@ public class Users {
     public Users() {
     }
 
-    public Users(String name, String phone,String pass, boolean role) {
+    public Users(String name, String phone,String pass, boolean role, boolean isBan) {
         this.name = name;
         this.pass = pass;
         this.role = role;
         this.phone = phone;
+        this.isBan = isBan;
     }
 
     public String getId() {
@@ -55,5 +57,13 @@ public class Users {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public boolean isBan() {
+        return isBan;
+    }
+
+    public void setBan(boolean ban) {
+        isBan = ban;
     }
 }

@@ -67,7 +67,11 @@ public class LoginActivity extends AppCompatActivity {
                         dialog2.dismiss();
                     }
                     SaveUserLogin.saveAccount(getBaseContext(), u);
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    if (u.isRole()){
+                        startActivity(new Intent(LoginActivity.this, MainActivityAdmin.class));
+                    }else{
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    }
                     finish();
                     return;
                 }
@@ -113,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
                 return;
             }
         }
-        Users user = new Users(username, phone, password, false);
+        Users user = new Users(username, phone, password, false, false);
         DatabaseReference usersRef = FirebaseDao.db.getReference().child("Users");
         usersRef.push().setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
