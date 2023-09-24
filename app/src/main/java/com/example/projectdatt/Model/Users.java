@@ -7,6 +7,7 @@ public class Users {
     private String phone;
     private boolean role;
     private boolean isBan;
+    private String image;
 
     public String getName() {
         return name;
@@ -65,5 +66,13 @@ public class Users {
 
     public void setBan(boolean ban) {
         isBan = ban;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

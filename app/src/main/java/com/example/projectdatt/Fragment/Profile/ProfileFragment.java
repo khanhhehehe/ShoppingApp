@@ -36,6 +36,7 @@ import com.example.projectdatt.R;
 import com.example.projectdatt.SharedPreferences.SaveUserLogin;
 import com.google.android.gms.common.api.Response;
 import com.google.firebase.firestore.auth.User;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -45,6 +46,7 @@ import com.google.firebase.firestore.auth.User;
 public class ProfileFragment extends Fragment {
     TextView tv_update, tv_name_profile, tv_phone, tv_username;
     LinearLayout linear_logout, linear_changepass,linear_history;
+    ImageView img_user;
     Users user;
 
     public ProfileFragment() {
@@ -73,6 +75,7 @@ public class ProfileFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         user = SaveUserLogin.getAccount(getContext());
         GetView(view);
+        Picasso.get().load(user.getImage()).placeholder(R.drawable.shoppingbag).error(R.drawable.shoppingbag).into(img_user);
         tv_name_profile.setText(user.getName());
         tv_username.setText(user.getName());
         tv_phone.setText(user.getPhone());
@@ -100,6 +103,7 @@ public class ProfileFragment extends Fragment {
         tv_name_profile = view.findViewById(R.id.tv_name_profile);
         tv_username = view.findViewById(R.id.tv_username);
         tv_phone = view.findViewById(R.id.tv_phone);
+        img_user = view.findViewById(R.id.img_user);
         linear_logout = view.findViewById(R.id.linear_logout);
         linear_changepass = view.findViewById(R.id.linear_changepass);
         linear_history = view.findViewById(R.id.linear_history);

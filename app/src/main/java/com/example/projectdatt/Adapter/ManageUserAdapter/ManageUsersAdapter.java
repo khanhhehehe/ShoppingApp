@@ -25,6 +25,7 @@ import com.example.projectdatt.Fragment.ManageUser.SuccessfulFragment;
 import com.example.projectdatt.Model.Users;
 import com.example.projectdatt.R;
 import com.example.projectdatt.SharedPreferences.SaveUserLogin;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -54,6 +55,7 @@ public class ManageUsersAdapter extends RecyclerView.Adapter<ManageUsersAdapter.
         if (users == null) {
             return;
         }
+        Picasso.get().load(users.getImage()).placeholder(R.drawable.shoppingbag).error(R.drawable.shoppingbag).into(holder.img_user);
         holder.name_user.setText(users.getName());
         holder.phone_user.setText(users.getPhone());
         holder.switchButton.setChecked(users.isRole());
