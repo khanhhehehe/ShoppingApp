@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottom_doanhthu"
+        android:icon="@drawable/baseline_account_balance_24"
+        android:title="Revenue"/>
+    <item
+        android:id="@+id/bottom_sanpham"
+        android:icon="@drawable/baseline_shopping_bag_24"
+        android:title="Product"/>
+    <item
+        android:id="@+id/bottom_donhang"
+        android:icon="@drawable/baseline_local_shipping_24"
+        android:title="Order"/>
+    <item
+        android:id="@+id/bottom_taikhoan"
+        android:icon="@drawable/baseline_people_alt_24"
+        android:title="People"/>
+    <item
+        android:id="@+id/bottom_profile"
+        android:icon="@drawable/icon_account"
+        android:title="Profile"/>
+</menu>

@@ -128,6 +128,42 @@ public class FirebaseDao {
         });
     }
 
+    public static void UpdateRoleUser(String id, boolean role, Context context) {
+        HashMap hashMap = new HashMap();
+        hashMap.put("role", role);
+        DatabaseReference userRef = db.getReference().child("Users");
+        userRef.child(id).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+            @Override
+            public void onSuccess(Object o) {
+                UpdateListUsers();
+                Toast.makeText(context, "Thay đổi vai trò thành công", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(context, "Thay đổi vai trò thất bại", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public static void BanUser(String id, boolean isBan, Context context) {
+        HashMap hashMap = new HashMap();
+        hashMap.put("ban", isBan);
+        DatabaseReference userRef = db.getReference().child("Users");
+        userRef.child(id).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+            @Override
+            public void onSuccess(Object o) {
+                UpdateListUsers();
+//                Toast.makeText(context, "Thay đổi vai trò thành công", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(context, "Thay đổi vai trò thất bại", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     //-----------------About Products
     public static void ReadProducts(final StatusGetProducts callback) {
         DatabaseReference myRef = db.getReference().child("Products");
