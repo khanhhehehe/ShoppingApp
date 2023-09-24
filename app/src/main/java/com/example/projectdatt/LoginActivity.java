@@ -52,6 +52,10 @@ public class LoginActivity extends AppCompatActivity {
         for (Users u : FirebaseDao.myListUsers) {
             if (u.getName().equals(username)) {
                 if (u.getPass().equals(password)) {
+                    if (u.isBan()) {
+                        Toast.makeText(LoginActivity.this, "Tài khoản hiện tại đã bị cấm", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                     ExecutorService executorService = Executors.newCachedThreadPool();
                     executorService.execute(new Runnable() {
                         @Override
@@ -67,9 +71,9 @@ public class LoginActivity extends AppCompatActivity {
                         dialog2.dismiss();
                     }
                     SaveUserLogin.saveAccount(getBaseContext(), u);
-                    if (u.isRole()){
+                    if (u.isRole()) {
                         startActivity(new Intent(LoginActivity.this, MainActivityAdmin.class));
-                    }else{
+                    } else {
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     }
                     finish();

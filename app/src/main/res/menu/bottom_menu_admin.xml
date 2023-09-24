@@ -16,4 +16,8 @@
         android:id="@+id/bottom_taikhoan"
         android:icon="@drawable/baseline_people_alt_24"
         android:title="People"/>
+    <item
+        android:id="@+id/bottom_profile"
+        android:icon="@drawable/icon_account"
+        android:title="Profile"/>
 </menu>

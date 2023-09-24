@@ -83,6 +83,9 @@ public class ProfileFragment extends Fragment {
         linear_changepass.setOnClickListener(view1 -> {
             ShowDialogUpdatePassword();
         });
+        if (user.isRole()){
+            linear_history.setVisibility(View.GONE);
+        }
         linear_history.setOnClickListener(view1 -> {
             FragmentManager fragmentManager = ((AppCompatActivity) view.getContext()).getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.layout_content, HistoryFragment.newInstance()).addToBackStack(null).commit();
@@ -168,6 +171,7 @@ public class ProfileFragment extends Fragment {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                SaveUserLogin.saveAccount(getContext(), new Users());
                 startActivity(new Intent(getActivity(), LoginActivity.class));
                 getActivity().finish();
             }
