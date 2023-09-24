@@ -43,6 +43,9 @@ public class MainActivityAdmin extends AppCompatActivity {
                     case R.id.bottom_taikhoan:
                         replaceFragment(ManageUserFragment.newInstance());
                         return true;
+                    case R.id.bottom_profile:
+                        replaceFragment(ProfileFragment.newInstance());
+                        return true;
                 }
                 return false;
             }

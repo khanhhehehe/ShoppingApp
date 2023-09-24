@@ -50,6 +50,7 @@
                     app:cardCornerRadius="250dp">
 
                     <ImageView
+                        android:id="@+id/img_user"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:scaleType="centerCrop"
