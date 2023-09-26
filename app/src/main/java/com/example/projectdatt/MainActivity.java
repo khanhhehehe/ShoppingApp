@@ -42,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.bottom_cart:
                         replaceFragment(CartFragment.newInstance());
                         return true;
+                    case R.id.bottom_chat:
+                        Intent chat_Activity= new Intent(getBaseContext(), ChatActivity.class);
+                        startActivity(chat_Activity);
+                        return true;
                     case R.id.bottom_user:
                         replaceFragment(ProfileFragment.newInstance());
                         return true;
