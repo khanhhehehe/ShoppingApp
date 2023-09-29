@@ -4,38 +4,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_bottom"
-    android:paddingVertical="28dp"
-    android:layout_marginTop="40dp">
+    android:paddingVertical="28dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:paddingHorizontal="40dp">
+
                 <ImageView
                     android:id="@+id/img_dismiss"
-                    android:src="@drawable/clear2"
                     android:layout_width="36dp"
-                    android:layout_height="36dp"/>
+                    android:layout_height="36dp"
+                    android:src="@drawable/clear2" />
             </LinearLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="40dp"
                 android:layout_marginBottom="30dp"
+                android:gravity="center"
                 android:text="Thanh toán ngay"
                 android:textSize="28dp"
-                android:gravity="center"
                 android:textStyle="bold" />
 
             <EditText
@@ -69,6 +70,7 @@
                 android:paddingVertical="15dp"
                 android:textColorHint="#ccc"
                 android:textSize="20dp" />
+
             <EditText
                 android:id="@+id/edt_location"
                 android:layout_width="match_parent"
@@ -84,6 +86,7 @@
                 android:paddingVertical="15dp"
                 android:textColorHint="#ccc"
                 android:textSize="20dp" />
+
             <RadioGroup
                 android:id="@+id/radioGroup"
                 android:layout_width="match_parent"
@@ -94,28 +97,63 @@
                     android:id="@+id/radioButton1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Thanh toán khi nhận hàng"
-                    android:textSize="20dp"
-                    android:ems="10"
                     android:layout_marginVertical="8dp"
+                    android:background="@drawable/custom_input"
+                    android:checked="true"
+                    android:ems="10"
                     android:paddingHorizontal="12dp"
                     android:paddingVertical="15dp"
-                    android:checked="true"
-                    android:background="@drawable/custom_input"/>
+                    android:text="Thanh toán khi nhận hàng"
+                    android:textSize="20dp" />
 
                 <RadioButton
                     android:id="@+id/radioButton2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Thanh toán ngân hàng"
-                    android:textSize="20dp"
-                    android:ems="10"
                     android:layout_marginVertical="8dp"
+                    android:background="@drawable/custom_input"
+                    android:ems="10"
                     android:paddingHorizontal="12dp"
                     android:paddingVertical="15dp"
-                    android:background="@drawable/custom_input"/>
+                    android:text="Thanh toán ngân hàng"
+                    android:textSize="20dp" />
 
             </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/txtmagg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="8dp"
+                android:background="@drawable/custom_input"
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="15dp"
+                android:text="Chọn mã giảm giá "
+                android:textColorHint="#ccc"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/txt_tongtien"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="8dp"
+                android:background="@drawable/custom_input"
+                android:drawableStart="@drawable/baseline_attach_money_24"
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:hint="Tổng tiền"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="15dp"
+                android:textColor="#FF0000"
+                android:textColorHint="#ccc"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
 
             <Button
                 android:id="@+id/btn_confirm"

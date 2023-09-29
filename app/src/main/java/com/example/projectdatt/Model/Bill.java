@@ -12,9 +12,11 @@ public class Bill {
     private List<ProductsAddCart> cartList;
     private int totalprice;
     private String order_status;
+    private boolean discountUsed = false;
 
     public Bill() {
     }
+
 
     public Bill(String id_user, String username, String phone, String location, String paymethod,String order_status, List<ProductsAddCart> cartList, int totalprice) {
         this.id_user = id_user;
@@ -25,6 +27,27 @@ public class Bill {
         this.paymethod = paymethod;
         this.cartList = cartList;
         this.totalprice = totalprice;
+    }
+
+    public Bill(String id, String id_user, String username, String phone, String location, String paymethod, List<ProductsAddCart> cartList, int totalprice, String order_status, boolean discountUsed) {
+        this.id = id;
+        this.id_user = id_user;
+        this.username = username;
+        this.phone = phone;
+        this.location = location;
+        this.paymethod = paymethod;
+        this.cartList = cartList;
+        this.totalprice = totalprice;
+        this.order_status = order_status;
+        this.discountUsed = discountUsed;
+    }
+
+    public boolean isDiscountUsed() {
+        return discountUsed;
+    }
+
+    public void setDiscountUsed(boolean discountUsed) {
+        this.discountUsed = discountUsed;
     }
 
     public String getId() {
