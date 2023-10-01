@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="15dp"
+    android:elevation="2dp"
+    android:orientation="vertical"
+    android:id="@+id/item_product"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+        <ImageView
+            android:id="@+id/edit_Product"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/edit"/>
+        <ImageView
+            android:id="@+id/delete_Product"
+            android:layout_marginRight="10dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/remove"/>
+
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/image_imgproduct"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:src="@drawable/shoppingbag" />
+
+    <TextView
+        android:id="@+id/tv_productname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="hello"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textSize="18sp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/blue_bold" />
+</LinearLayout>

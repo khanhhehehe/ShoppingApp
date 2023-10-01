@@ -238,6 +238,23 @@ public class FirebaseDao {
         });
     }
 
+    public static void DeleteProduct(String productKey, Context context) {
+        DatabaseReference productsRef = db.getReference().child("Products").child(productKey);
+
+        productsRef.removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(context, "Xóa sản phẩm thành công", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(context, "Xóa sản phẩm thất bại", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
     public static void ReadProductsAddCart(final StatusGetProductsAddCart callback, Context context) {
         DatabaseReference myRef = db.getReference().child("ProductsAddCart");
         myRef.addValueEventListener(new ValueEventListener() {
