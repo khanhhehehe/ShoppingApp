@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddProductActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Update Product"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@color/teal_700"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="10dp">
+        <LinearLayout
+            android:id="@+id/liner_share_animal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:layout_marginTop="30dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_anh"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/camera" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_album"
+                android:src="@drawable/photo_album"
+                android:layout_marginLeft="30dp"
+                android:layout_gravity="center" />
+        </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:boxBackgroundColor="#ffff"
+            app:startIconTintMode="screen"
+            android:paddingBottom="1dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:background="@drawable/bg_coneradios"
+            app:startIconTint="@color/cardview_shadow_end_color"
+            app:startIconDrawable="@drawable/name_animal"
+            app:hintEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:hint="Name Product"
+                android:id="@+id/ed_nameProduct"
+                android:fontFamily="@font/solway_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="1dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:background="@drawable/bg_coneradios"
+            app:boxBackgroundColor="#ffff"
+            app:startIconTintMode="screen"
+            app:startIconTint="@color/cardview_shadow_end_color"
+            app:startIconDrawable="@drawable/age"
+            app:hintEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:hint="Price Product"
+                android:id="@+id/ed_priceProduct"
+                android:fontFamily="@font/solway_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="1dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:background="@drawable/bg_coneradios"
+            app:boxBackgroundColor="#ffff"
+            app:startIconTintMode="screen"
+            app:startIconTint="@color/cardview_shadow_end_color"
+            app:startIconDrawable="@drawable/species"
+            app:hintEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:hint="Type Product"
+                android:id="@+id/ed_typeProduct"
+                android:fontFamily="@font/solway_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="1dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:background="@drawable/bg_coneradios"
+            app:boxBackgroundColor="#ffff"
+            app:startIconTintMode="screen"
+            app:startIconTint="@color/cardview_shadow_end_color"
+            app:startIconDrawable="@drawable/species"
+            app:hintEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:hint="Quantity Product"
+                android:id="@+id/ed_quantityProduct"
+                android:fontFamily="@font/solway_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="1dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:background="@drawable/bg_coneradios"
+            app:boxBackgroundColor="#ffff"
+            app:startIconTintMode="screen"
+            app:startIconTint="@color/cardview_shadow_end_color"
+            app:startIconDrawable="@drawable/species"
+            app:hintEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:hint="Description Product"
+                android:id="@+id/ed_desProduct"
+                android:fontFamily="@font/solway_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="30dp">
+            <Button
+                android:id="@+id/btn_UpProduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update Product"
+                android:fontFamily="@font/solway_bold"
+                />
+            <Button
+                android:id="@+id/btn_Cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:fontFamily="@font/solway_bold"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
