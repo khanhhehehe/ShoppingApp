@@ -41,6 +41,7 @@ import com.example.projectdatt.R;
 import com.example.projectdatt.SharedPreferences.SaveUserLogin;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -155,6 +156,13 @@ public class CartFragment extends Fragment {
         btn_confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Lấy ngày tháng hiện tại
+                Calendar calendar = Calendar.getInstance();
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH) + 1; // Tháng bắt đầu từ 0 nên cộng thêm 1
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+                String currentDate = day + "-" + month + "-" + year;
                 String username = edt_username.getText().toString();
                 String phone = edt_phone.getText().toString();
                 String location = edt_location.getText().toString();
@@ -164,7 +172,7 @@ public class CartFragment extends Fragment {
                     tv_total.setText("Tổng số tiền: 0 VND");
                     List<ProductsAddCart> addCartList = new ArrayList<>();
                     cartAdapter.setDataProductsCart(addCartList);
-                    FirebaseDao.Pay(user.getId(), username, phone, location, paymentmethod, FirebaseDao.addCartList, total, getContext());
+                    FirebaseDao.Pay(user.getId(), username, phone, location, paymentmethod, FirebaseDao.addCartList, total,currentDate, getContext());
                     dialog.dismiss();
                 }
             }

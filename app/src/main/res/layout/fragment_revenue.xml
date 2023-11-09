@@ -1,13 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Fragment.ManageRevenue.RevenueFragment">
-
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Revenue" />
+        android:layout_height="wrap_content"
+        android:text="Doanh Thu - Doanh Số"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:background="@color/blue"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="50dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
 
-</FrameLayout>
+        android:orientation="horizontal">
+        <EditText
+            android:paddingLeft="30dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/startDateEditText"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="Start Date"
+            android:focusable="false"
+            android:clickable="true"/>
+
+        <EditText
+            android:paddingLeft="30dp"
+            android:layout_marginLeft="60dp"
+            android:id="@+id/endDateEditText"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="End Date"
+            android:focusable="false"
+            android:clickable="true"/>
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:paddingLeft="10dp"
+        android:text="Tổng doanh thu:"
+        android:textSize="25sp"
+        android:id="@+id/showdt"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:paddingLeft="10dp"
+        android:text="Tổng doanh số: "
+        android:textSize="25sp"
+        android:id="@+id/showds"/>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:id="@+id/btntinh"
+        android:background="@drawable/bottom_background"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:text="Tính"/>
+
+    <TextView
+
+        android:id="@+id/showfullds"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/purple_700"
+        android:textSize="20sp"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listview"/>
+
+
+</LinearLayout>
