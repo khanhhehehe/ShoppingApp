@@ -61,10 +61,14 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
         holder.tv_phone.setText("Điện thoại: " + bill.getPhone());
         holder.tv_method.setText(bill.getPaymethod());
         holder.tv_totalprice.setText(bill.getTotalprice() + "");
+        holder.tv_date.setText(bill.getDate() + "");
         holder.tv_order_status.setText(bill.getOrder_status());
         if (bill.getOrder_status().equals("Đã hủy")) {
             holder.btn_cancel.setEnabled(false);
-        } else {
+        }else if(bill.getOrder_status().equals("Đã thanh toán")){
+            holder.btn_cancel.setEnabled(false);
+        }
+        else {
             holder.btn_cancel.setOnClickListener(view -> {
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setTitle("Hủy đơn hàng");
@@ -95,7 +99,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
     }
 
     public class HistoryViewHolder extends RecyclerView.ViewHolder {
-        TextView tv_detail, tv_location, tv_phone, tv_method, tv_totalprice, tv_order_status;
+        TextView tv_detail, tv_location, tv_phone, tv_method, tv_totalprice, tv_order_status, tv_date;
         Button btn_cancel;
 
         public HistoryViewHolder(@NonNull View itemView) {
@@ -104,6 +108,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
             tv_location = itemView.findViewById(R.id.tv_location);
             tv_phone = itemView.findViewById(R.id.tv_phone);
             tv_method = itemView.findViewById(R.id.tv_method);
+            tv_date = itemView.findViewById(R.id.tv_date);
             tv_totalprice = itemView.findViewById(R.id.tv_totalprice);
             tv_order_status = itemView.findViewById(R.id.tv_order_status);
             btn_cancel = itemView.findViewById(R.id.btn_cancel);

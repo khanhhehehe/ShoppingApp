@@ -9,16 +9,17 @@ public class Bill {
     private String phone;
     private String location;
     private String paymethod;
+
     private List<ProductsAddCart> cartList;
     private int totalprice;
     private String order_status;
     private boolean discountUsed = false;
-
+    private String date;
     public Bill() {
     }
 
 
-    public Bill(String id_user, String username, String phone, String location, String paymethod,String order_status, List<ProductsAddCart> cartList, int totalprice) {
+    public Bill(String id_user, String username, String phone, String location, String paymethod,String order_status, List<ProductsAddCart> cartList, int totalprice, String date) {
         this.id_user = id_user;
         this.username = username;
         this.phone = phone;
@@ -27,9 +28,10 @@ public class Bill {
         this.paymethod = paymethod;
         this.cartList = cartList;
         this.totalprice = totalprice;
+        this.date = date;
     }
 
-    public Bill(String id, String id_user, String username, String phone, String location, String paymethod, List<ProductsAddCart> cartList, int totalprice, String order_status, boolean discountUsed) {
+    public Bill(String id, String id_user, String username, String phone, String location, String paymethod, List<ProductsAddCart> cartList, int totalprice, String order_status, boolean discountUsed,String date) {
         this.id = id;
         this.id_user = id_user;
         this.username = username;
@@ -40,6 +42,7 @@ public class Bill {
         this.totalprice = totalprice;
         this.order_status = order_status;
         this.discountUsed = discountUsed;
+        this.date = date;
     }
 
     public boolean isDiscountUsed() {
@@ -120,5 +123,13 @@ public class Bill {
 
     public void setOrder_status(String order_status) {
         this.order_status = order_status;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

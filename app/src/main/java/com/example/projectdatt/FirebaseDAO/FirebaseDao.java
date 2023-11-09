@@ -324,8 +324,8 @@ public class FirebaseDao {
         });
     }
 
-    public static void Pay(String id_user, String username, String phone, String location, String paymethod, List<ProductsAddCart> cartList, int total, Context context) {
-        Bill bill = new Bill(id_user, username, phone, location, paymethod, "Chờ xác nhận", cartList, total);
+    public static void Pay(String id_user, String username, String phone, String location, String paymethod, List<ProductsAddCart> cartList, int total, String date, Context context) {
+        Bill bill = new Bill(id_user, username, phone, location, paymethod, "Chờ xác nhận", cartList, total, date);
         DatabaseReference billRef = db.getReference().child("Bill");
         billRef.push().setValue(bill).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
@@ -374,12 +374,14 @@ public class FirebaseDao {
                 List<Bill> billList = new ArrayList<>();
                 for (DataSnapshot dt : dataSnapshot.getChildren()) {
                     Bill b = dt.getValue(Bill.class);
-                    if (b == null) {
-                        continue;
-                    }
-                    b.setId(dt.getKey());
-                    if (b.getId_user().equals(SaveUserLogin.getAccount(context).getId())) {
-                        billList.add(b);
+                    if (b != null) {
+                        b.setId(dt.getKey());
+                        // Kiểm tra xem người dùng đăng nhập có role là true hay không
+                        if (SaveUserLogin.getAccount(context).isRole()) {
+                            billList.add(b);
+                        } else if (b.getId_user().equals(SaveUserLogin.getAccount(context).getId())) {
+                            billList.add(b);
+                        }
                     }
                 }
                 Collections.reverse(billList);
@@ -393,6 +395,8 @@ public class FirebaseDao {
             }
         });
     }
+
+
 
     public static void UpdateListBill(Context context) {
         ReadHistory(new StatusGetHistoryBill() {
